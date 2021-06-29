@@ -1,5 +1,6 @@
 const express = require('express') //importacao do pacote
 const app = express() //instanciando express
+const cors = require('cors')
 
 const alunos = [
   {
@@ -19,6 +20,8 @@ const alunos = [
     idade: 15
   }
 ]
+
+app.use(cors()) //habilitando cors na nossa aplicacao
 
 app.get('/api/v1/alunos', function (req, res) { //endereco da requisicao onde e retornado hello world
   res.send(alunos)
